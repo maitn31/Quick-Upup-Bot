@@ -1,0 +1,299 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>Dotaupup.sikuli</h2> <a href="Dotaupup.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> datetime
+<span class="kw">import</span> subprocess
+<span class="kw">import</span> os
+
+<span class="cmt">##click(Pattern("1790283452186.png").targetOffset(685,720))</span>
+<span class="cmt">##click("1790283925188.png")</span>
+<span class="cmt">##click("1790285503582.png")</span>
+
+
+
+starting = datetime.datetime.now()
+
+<span class="kw">def</span> os_print(string):
+    <span class="kw">global</span> i
+    temp = <span class="str">"echo "</span>  + string
+    os.system(temp)
+<span class="kw">def</span> dota_upup():
+    <span class="kw">global</span> i
+    os_print(<span class="str">"started"</span>)
+    <span class="skw">click</span>(<img src="1789947020109.png" />)
+    <span class="skw">sleep</span>(<span class="dig">10</span>)
+    <span class="skw">click</span>(<img src="1789947033831.png" />)
+    <span class="skw">sleep</span>(<span class="dig">222</span>)
+
+    <span class="skw">wait</span>(<img src="1789947168955.png" />,<span class="dig">300</span>)
+
+    <span class="skw">doubleClick</span>(Pattern(<img src="1789947168955.png" />).targetOffset(<span class="dig">687</span>,<span class="dig">316</span>)) <span class="cmt">#adventure</span>
+
+    <span class="skw">click</span>(Pattern(<img src="1789947168955.png" />).targetOffset(<span class="dig">670</span>,<span class="dig">739</span>)) <span class="cmt">#choose</span>
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">dragDrop</span>(Pattern(<img src="1789947168955-1.png" />).targetOffset(<span class="dig">878</span>,<span class="dig">292</span>), Pattern(<img src="1789947168955-1.png" />).targetOffset(<span class="dig">878</span>,<span class="dig">447</span>))
+
+    <span class="skw">doubleClick</span>(Pattern(<img src="1789947168955.png" />).targetOffset(<span class="dig">689</span>,<span class="dig">320</span>)) <span class="cmt">#chon diff 6</span>
+    <span class="cmt">#doubleClick(Pattern("1789947168955.png").targetOffset(670,400)) #chon diff 7</span>
+    <span class="skw">click</span>(Pattern(<img src="1789947168955.png" />).targetOffset(<span class="dig">757</span>,<span class="dig">741</span>)) <span class="cmt">#confirm diff</span>
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">doubleClick</span>(Pattern(<img src="1789947168955.png" />).targetOffset(<span class="dig">670</span>,<span class="dig">323</span>)) <span class="cmt">#chon floor</span>
+    <span class="kw">for</span> i <span class="kw">in</span> range (<span class="dig">10</span>):
+        <span class="skw">click</span>(Pattern(<img src="1789947168955.png" />).targetOffset(<span class="dig">747</span>,<span class="dig">835</span>)) <span class="cmt">##chon corrupion</span>
+
+    <span class="skw">click</span>(Pattern(<img src="1789947168955.png" />).targetOffset(<span class="dig">779</span>,<span class="dig">736</span>)) <span class="cmt">#confirm floor</span>
+    <span class="skw">sleep</span>(<span class="dig">3</span>)
+    free_mouse()
+
+
+
+
+
+<span class="kw">def</span> free_mouse():
+    <span class="kw">if</span> exists(Pattern(<img src="1790285503582.png" />).targetOffset(-<span class="dig">785</span>,<span class="dig">226</span>)):
+        <span class="kw">try</span>:
+            <span class="skw">click</span>(Pattern(<img src="1790285503582.png" />).targetOffset(-<span class="dig">785</span>,<span class="dig">226</span>))
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+    <span class="kw">if</span> exists(<img src="1789946285227.png" />):
+        <span class="kw">try</span>:
+            <span class="skw">click</span>(Pattern(<img src="1789946285227.png" />).targetOffset(<span class="dig">553</span>,-<span class="dig">56</span>))
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+    <span class="kw">if</span> exists(<img src="1790035648946.png" />):
+        <span class="kw">try</span>:
+            <span class="skw">click</span>(<img src="1790035648946.png" />)
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+<span class="kw">def</span> check_lvl():
+    <span class="kw">if</span> exists(<img src="1789947459959.png" />):
+        <span class="kw">try</span>:
+            <span class="skw">doubleClick</span>(<img src="1789947459959.png" />)
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+
+<span class="kw">def</span> changing_hero():
+    <span class="kw">if</span> exists(<img src="1789947505899.png" />):
+        os.system(<span class="str">'echo detected icon'</span>)
+        <span class="kw">try</span>:
+            <span class="skw">click</span>(<img src="1789947505899.png" />)
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+    <span class="kw">try</span>:
+        <span class="skw">click</span>(Pattern(<img src="1789947545940.png" />).targetOffset(<span class="dig">837</span>,-<span class="dig">472</span>))
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+
+        os.system(<span class="str">'echo chosing hero'</span>)
+        <span class="skw">sleep</span>(<span class="dig">3</span>)
+
+<span class="kw">def</span> game_running():
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="kw">global</span> starting
+    <span class="kw">try</span>:
+        free_mouse()
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+    check_lvl()
+    <span class="cmt">##true- start clicking</span>
+    changing_hero()
+    os.system(<span class="str">'echo start a new circle'</span>)
+    <span class="kw">if</span> exists(<img src="1789947616177.png" />):
+        os.system(<span class="str">'echo detected purchasable item'</span>)
+        <span class="kw">try</span>:
+
+            <span class="skw">click</span>(<img src="1789947616177.png" />)
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+        <span class="kw">try</span>:
+            free_mouse()
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+        <span class="kw">if</span> exists(<img src="1789947651449.png" />):
+            <span class="kw">try</span>:
+                <span class="skw">click</span>(<img src="1789947651449.png" />)
+            <span class="kw">except</span>:
+                <span class="kw">pass</span>
+        <span class="kw">if</span> exists(<img src="1790169210783.png" />):
+            <span class="kw">try</span>:
+                <span class="skw">click</span>(<img src="1790169210783.png" />)
+            <span class="kw">except</span>:
+                <span class="kw">pass</span>
+    current = datetime.datetime.now()
+    time_diffrence = current - starting
+    <span class="kw">if</span> (time_diffrence.total_seconds() &gt; <span class="dig">1820</span>):
+        os_print(<span class="str">"game bat dau luc "</span> + str(starting) + <span class="str">" end luc "</span> + str(current))
+        <span class="kw">return</span> False <span class="cmt">##game end</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> True
+os.system(<span class="str">'cls'</span>)
+
+
+<span class="kw">def</span> post_game():
+    <span class="kw">try</span>:
+
+        <span class="skw">click</span>(Pattern(<img src="1790596091734.png" />).targetOffset(<span class="dig">39</span>,<span class="dig">46</span>))
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+    <span class="skw">click</span>(Pattern(<img src="1789946449509.png" />).targetOffset(<span class="dig">13</span>,<span class="dig">4</span>))
+    free_mouse()
+    <span class="skw">click</span>(Pattern(<img src="1789946449509.png" />).targetOffset(<span class="dig">13</span>,<span class="dig">4</span>))
+    free_mouse()
+    <span class="skw">click</span>(Pattern(<img src="1789946449509.png" />).targetOffset(<span class="dig">13</span>,<span class="dig">4</span>))
+    post_game_begin = datetime.datetime.now()
+    <span class="kw">while</span> <span class="kw">not</span> exists (<img src="1789946805178.png" />):
+        post_game_current = datetime.datetime.now()
+        post_game_time_diffrence = post_game_current - post_game_begin
+        <span class="kw">if</span> (post_game_time_diffrence.total_seconds() &gt; <span class="dig">120</span>):
+            <span class="kw">break</span>
+        <span class="kw">try</span>:
+            <span class="skw">click</span>(Pattern(<img src="1789946501518.png" />).similar(<span class="dig">0.50</span>))
+            free_mouse()
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+    <span class="kw">if</span> exists(Pattern(<img src="1789946805178.png" />).targetOffset(-<span class="dig">476</span>,<span class="dig">244</span>)):
+        <span class="skw">click</span>(Pattern(<img src="1789946805178.png" />).targetOffset(-<span class="dig">476</span>,<span class="dig">244</span>))
+        <span class="skw">click</span>(Pattern(<img src="1789946805178.png" />).targetOffset(<span class="dig">435</span>,<span class="dig">566</span>))
+        <span class="skw">sleep</span>(<span class="dig">120</span>)
+
+    <span class="skw">click</span>(Pattern(<img src="1789946449509.png" />).targetOffset(<span class="dig">13</span>,<span class="dig">4</span>))
+    free_mouse()
+    <span class="skw">click</span>(Pattern(<img src="1789946449509.png" />).targetOffset(<span class="dig">13</span>,<span class="dig">4</span>))
+    free_mouse()
+    <span class="skw">click</span>(Pattern(<img src="1789946449509.png" />).targetOffset(<span class="dig">13</span>,<span class="dig">4</span>))
+    post_game_begin = datetime.datetime.now()
+    <span class="kw">while</span> <span class="kw">not</span> exists (<img src="1789946805178.png" />):
+        post_game_current = datetime.datetime.now()
+        post_game_time_diffrence = post_game_current - post_game_begin
+        <span class="kw">if</span> (post_game_time_diffrence.total_seconds() &gt; <span class="dig">120</span>):
+            <span class="kw">break</span>
+        <span class="kw">try</span>:
+            <span class="skw">click</span>(Pattern(<img src="1789946501518.png" />).similar(<span class="dig">0.50</span>))
+            free_mouse()
+        <span class="kw">except</span>:
+            <span class="kw">pass</span>
+    <span class="kw">if</span> exists(Pattern(<img src="1789946805178.png" />).targetOffset(-<span class="dig">476</span>,<span class="dig">244</span>)):
+        <span class="skw">click</span>(Pattern(<img src="1789946805178.png" />).targetOffset(-<span class="dig">504</span>,<span class="dig">434</span>))
+        <span class="skw">click</span>(Pattern(<img src="1789946805178.png" />).targetOffset(<span class="dig">435</span>,<span class="dig">566</span>))
+        <span class="skw">sleep</span>(<span class="dig">60</span>)
+        free_mouse()
+    <span class="cmt">#click chon do</span>
+    <span class="skw">click</span>(Pattern(<img src="1789949316429.png" />).targetOffset(<span class="dig">1555</span>,-<span class="dig">676</span>))
+    <span class="skw">click</span>(Pattern(<img src="1789949316429.png" />).targetOffset(<span class="dig">1614</span>,-<span class="dig">668</span>))
+    <span class="skw">click</span>(Pattern(<img src="1789949316429.png" />).targetOffset(<span class="dig">1678</span>,-<span class="dig">673</span>))
+    <span class="skw">click</span>(Pattern(<img src="1789949316429.png" />).targetOffset(<span class="dig">1741</span>,-<span class="dig">677</span>))
+    free_mouse()
+
+    <span class="kw">if</span> exists(<img src="1790359259637.png" />):
+        <span class="skw">click</span>(<img src="1790359259637.png" />) <span class="cmt">#confirm</span>
+    free_mouse()
+    <span class="kw">try</span>:
+
+        <span class="skw">click</span>(Pattern(<img src="1790596091734.png" />).targetOffset(<span class="dig">39</span>,<span class="dig">46</span>))
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+
+    <span class="cmt">###smelt</span>
+    <span class="skw">click</span>(Pattern(<img src="1789949316429.png" />).targetOffset(<span class="dig">99</span>,-<span class="dig">924</span>))<span class="cmt">#click equipment</span>
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Pattern(<img src="1789949448893.png" />).targetOffset(<span class="dig">8</span>,-<span class="dig">234</span>)) <span class="cmt">#click disassemble</span>
+    <span class="skw">click</span>(Pattern(<img src="1789949448893.png" />).targetOffset(<span class="dig">402</span>,<span class="dig">401</span>)) <span class="cmt">#click disassemble</span>
+    <span class="skw">click</span>(Pattern(<img src="1789949448893.png" />).targetOffset(<span class="dig">488</span>,<span class="dig">399</span>)) <span class="cmt">#click select all</span>
+    <span class="skw">click</span>(Pattern(<img src="1789949448893.png" />).targetOffset(<span class="dig">331</span>,<span class="dig">406</span>)) <span class="cmt">#click accept</span>
+    <span class="skw">click</span>(Pattern(<img src="1789949448893.png" />).targetOffset(-<span class="dig">107</span>,-<span class="dig">466</span>)) <span class="cmt">#click exit</span>
+    <span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="cmt">#leave</span>
+    <span class="kw">if</span> exists(Pattern(<img src="1790361973644.png" />).targetOffset(-<span class="dig">79</span>,<span class="dig">60</span>)):
+        <span class="skw">click</span>(Pattern(<img src="1790361973644.png" />).targetOffset(-<span class="dig">79</span>,<span class="dig">60</span>)) <span class="cmt">#click exit</span>
+    <span class="skw">sleep</span>(<span class="dig">5</span>)
+    <span class="skw">click</span>(Pattern(<img src="1789946952235.png" />).targetOffset(<span class="dig">1120</span>,<span class="dig">933</span>))
+    <span class="skw">sleep</span>(<span class="dig">30</span>)
+    <span class="skw">wait</span>(<img src="1789947004839.png" />,<span class="dig">60</span>)
+
+i = <span class="dig">1</span>
+<span class="kw">while</span> True:
+    <span class="kw">if</span> i &gt; <span class="dig">0</span>:
+        dota_upup()
+    <span class="kw">else</span>:
+        i = i +<span class="dig">1</span>
+    starting = datetime.datetime.now()
+    os_print(str(starting))
+    <span class="kw">while</span> game_running():
+        <span class="kw">pass</span>
+    <span class="kw">try</span>:
+        free_mouse()
+    <span class="kw">except</span>:
+        <span class="kw">pass</span>
+    post_game()
+</pre>
+</body>
+</html>
